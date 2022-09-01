@@ -134,7 +134,6 @@ export const Contact = ({ reff }) => {
                                                 className="mtCC "
                                                 label="Name"
                                                 name="user_name"
-                                                detectError1={detectError1}
                                                 setdetectError={setdetectError1}
                                                 
                                             />
@@ -143,7 +142,6 @@ export const Contact = ({ reff }) => {
                                                 className="mtCC "
                                                 label="Email"
                                                 name="user_email"
-                                                detectError2={detectError2}
                                                 setdetectError={setdetectError2}
                                             />
                                             <TextfieldWrapper
@@ -153,7 +151,6 @@ export const Contact = ({ reff }) => {
                                                 name="message"
                                                 label="Message"
                                                 autoComplete="off"
-                                                detectError3={detectError3}
                                                 setdetectError={setdetectError3}
                                             />
                                             <ButtonWrapper

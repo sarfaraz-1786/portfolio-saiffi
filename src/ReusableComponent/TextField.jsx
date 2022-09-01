@@ -18,12 +18,7 @@ const TextfieldWrapper = memo(({ name, ...otherProps }) => {
         configTextfield.helperText = mata.error;
         if ((configTextfield.error = true && name)) {
             configTextfield.setdetectError(true);
-        } 
-        // else if ((configTextfield.error = true && name === "user_email")) {
-        //     configTextfield.setdetectError2(true);
-        // } else if ((configTextfield.error = true && name === "message")) {
-        //     configTextfield.setdetectError3(true);
-        // }
+        }  
     }
 
     useEffect(() => {
@@ -31,11 +26,6 @@ const TextfieldWrapper = memo(({ name, ...otherProps }) => {
             if (name) {
                 configTextfield.setdetectError(false);
             } 
-            // else if (name === "user_email") {
-            //     configTextfield.setdetectError2(false);
-            // } else if (name === "message") {
-            //     configTextfield.setdetectError3(false);
-            // }
         }
     }, [mata.value, mata.error, name, configTextfield]);
 
