@@ -1,0 +1,27 @@
+.ProjectDiv .MuiPaper-root.MuiPaper-elevation1.MuiPaper-rounded {
+    height: 400px;
+    display: flex;
+    align-items: center;
+    padding-right: 80px;
+}
+
+.carouselContent {
+    width: 80%;
+    margin-left: 16px;
+}
+
+@media (max-width:600px) {
+    .ProjectDiv .MuiPaper-root.MuiPaper-elevation1.MuiPaper-rounded {
+        height: auto;
+        display: block;
+        padding-right: 0px;
+    }
+    .carouselContent {
+        text-align: center;
+        width: 100%;
+        margin-left: 0px;
+        padding: 0px 8px;
+    }
+    
+    
+}

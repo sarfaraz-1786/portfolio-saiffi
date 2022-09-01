@@ -1,0 +1,21 @@
+.MuiAppBar-positionFixed {
+    top: 0px;
+    left: 25% !important;
+    right: 188px !important;
+    position: fixed;
+    width: auto !important;
+}
+.navContainer{
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+.navLink{
+    font-size: 24px;
+    font-family: 'Saira' !important;
+    cursor: pointer;
+}
+.navLink:hover{
+    color: dimgrey;
+}

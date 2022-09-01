@@ -1,0 +1,57 @@
+.myImg {
+    width: 370px;
+    height: 370px;
+    border-radius: 10%;
+}
+
+.myImg:hover {
+    transition: all 0.5s ease-in-out;
+    transform: scale(1.5);
+}
+.myImg {
+    transition: all 0.5s ease-in-out;
+}
+
+.AboutImgOuter {
+    padding: 24px;
+    background-color: dimgray;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 10%;
+}
+
+.AboutContent {
+    font-size: 18px;
+    font-weight: 600;
+    padding: 0px 24px 16px 24px;
+}
+.AboutHeading {
+    font-size: 24px;
+    font-weight: bold;
+    color: firebrick;
+    padding: 16px 24px;
+}
+
+.AboutContainer {
+    overflow: hidden;
+    background-color: #fbfbfb;
+    height: 100vh;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+@media (max-width: 600px) {
+    .AboutContainer {
+        height: auto;
+    }
+    .AboutContent {
+        margin-bottom: 24px;
+    }
+
+    .AboutC1 {
+        margin-top: 24px !important;
+    }
+}

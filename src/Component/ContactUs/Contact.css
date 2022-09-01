@@ -1,0 +1,101 @@
+.contactContainer {
+    height: 100vh;
+    background: #403b4a; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #e7e9bb, #403b4a); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+        to right,
+        #e7e9bb,
+        #403b4a
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-position: top;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ContactPaper {
+    width: 1000px;
+    height: 500px;
+}
+
+.CCImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.positionCC1 {
+    position: absolute;
+    top: 30%;
+    left: 25%;
+}
+
+.ccImageText {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 32px;
+}
+
+.textCC {
+    color: #fff !important;
+    font-size: 18px;
+}
+
+.ccImage {
+    fill: #fff !important;
+    width: 24px !important;
+    height: 24px !important;
+    margin-top: 6px;
+}
+
+.Cheading {
+    font-size: 24px;
+    text-align: center;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 24px;
+}
+label{
+    font-size: 14px !important;
+}
+textarea,input {
+    font-family: 'Saira' !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+}
+.autoResizeCC{
+    resize: none !important;
+    height: 120px !important;
+    padding: 12px !important;
+}
+
+.mtCC{
+    margin-top: 16px !important;
+}
+.mtCCButton{
+    margin: 16px auto !important;
+    font-family: 'Saira' !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+}
+.btnCC{
+    margin: 0px auto;
+    background-color: #e21837 !important;
+    color: #fff !important;
+    font-style:normal !important;
+}
+
+@media (max-width:600px) {
+    .contactContainer {
+        height: auto;
+    }
+    .ContactPaper {
+        width: 1000px;
+        height: auto;
+    }
+    .CCImage {
+        height: 450px;
+    }
+}

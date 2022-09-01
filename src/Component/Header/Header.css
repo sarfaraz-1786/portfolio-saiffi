@@ -1,0 +1,203 @@
+.headerOuter {
+    height: 95vh;
+    margin: 24px;
+    background-image: url('https://3.bp.blogspot.com/-NiSGyTtyc1I/WAoCX71Zn4I/AAAAAAAADsU/ldlp6hNBdskjLnMlM4lN1q0GdO9pjYTjgCLcB/s1600/Coding%2Bbackgrounds%2B41.jpg');
+    background-size: cover;
+    background-position: top;
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+    position: relative;
+}
+
+.header__text-box {
+    text-transform: uppercase;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -55%);
+    text-align: center;
+    /*actually header_text-box is "div" box which act as a container for the text present in it.*/
+}
+
+.header__primary {
+    /* text-transform: uppercase; */
+    color: white;
+    font-weight: 800;
+    font-size: 7rem;
+    margin-bottom: 3rem;
+    /*background: linear-gradient(to bottom right, red, blue);
+    41,42,43 lines shows how to apply linear gradient on text
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    but theres a problem animation on heading text is not working properly*/
+}
+
+.header__primary--first {
+    display: block;
+    letter-spacing: 1rem;
+    text-transform: capitalize;
+    animation-name: moveTextLtR;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+}
+
+.header__primary--second {
+    display: block;
+    letter-spacing: 1.5rem;
+    animation: moveTextRtL 1.5s ease-in-out;
+    /*shorthand property*/
+}
+
+.btn:link,
+.btn:visited {
+    text-decoration: none;
+    border-radius: 20rem;
+    display: inline-block;
+    padding: 0.5rem 2.8rem;
+    font-weight: 600;
+    font-size: 3rem;
+    font-style: italic;
+    position: relative;
+    transition: all 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(-0.2rem);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn--color {
+    color: #777;
+    background-color: #fff;
+    margin-top: 70px;
+}
+
+.btn::after {
+    content: "";
+    /*content is neseccary to put otherwise btn will not appear,we r telling that this child btn is not empty*/
+    display: inline-block;
+    /*we display above parent btn as inline-block */
+    position: absolute;
+    /* to be able to set the top left value according to parent btn*/
+    height: 100%;
+    width: 100%;
+    border-radius: 20rem;
+    /*should be same as parent*/
+    top: 0;
+    left: 0;
+    z-index: -1;
+    /*appear behind the parent btn*/
+    transition: all 0.4s;
+    /*activate all the transition property*/
+}
+
+.btn--color::after {
+    background-color: #fff;
+}
+
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    /*if transition all in btn::after is not set the this transtion property will not work*/
+    opacity: 0;
+}
+
+.btn--animated {
+    animation: btu 0.5s ease-out 0.75s;
+    animation-fill-mode: backwards;
+}
+
+.header-title {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+}
+.header-title-wrapper {
+    width: 220px;
+    border-radius: 50%;
+    overflow: hidden;
+    height: 100%;
+}
+.header-item {
+    animation: move 10s ease-in-out infinite alternate;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    height: 50px;
+    animation-delay: 2s;
+}
+
+@media (max-width: 600px) {
+    .btn--color {
+        margin-top: 20px;
+    }
+    .header__text-box {
+        top: 45%;
+    }
+    .header__primary {
+        font-size: 3rem;
+    }
+}
+
+@keyframes btu {
+    0% {
+        opacity: 0;
+        tranform: translateY(3rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes move {
+    25% {
+        transform: translateY(-45px);
+    }
+    50% {
+        transform: translateY(-90px);
+    }
+    75% {
+        transform: translateY(-140px);
+    }
+    100% {
+        transform: translateY(-190px);
+    }
+}
+
+
+@keyframes moveTextLtR{
+    0%{
+        opacity: 0;
+        transform: translateX(-200px);
+    }
+    80%{
+        opacity: 0.3;
+        transform:translateX(-60px)
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
+}
+
+@keyframes moveTextRtL{
+    0%{
+        opacity: 0;
+        transform: translateX(200px);
+    }
+    80%{
+        opacity: 0.3;
+        transform:translateX(60px)
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
+}
+
