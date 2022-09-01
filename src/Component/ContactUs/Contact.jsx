@@ -19,38 +19,38 @@ export const Contact = ({ reff }) => {
     const [detectError2, setdetectError2] = useState(true);
     const [detectError3, setdetectError3] = useState(true);
 
-    useEffect(() => {
-        const a = [1, 5, 4, 1];
-        let k = a.length;
-        let array2 = [];
-        function sortMin() {
-            for (let i = 0; i < a.length; i++) {
-                let b = a.every((x) => {
-                    if (x === a[i]) {
-                        return true;
-                    } else {
-                        return x > a[i];
-                    }
-                });
-                if (a.length === 2) {
-                    if (a[0] > a[1]) {
-                        array2.push(a[1]);
-                        array2.push(a[0]);
-                    }
-                }
-                console.log(a, array2, k);
-                if (b) {
-                    if (k !== 0 && a.length !== 2) {
-                        array2.push(a.splice(i, 1)[0]);
-                        i = 0;
-                        k--;
-                    }
-                }
-            }
-            return array2;
-        }
-        console.log(sortMin());
-    }, []);
+    // useEffect(() => {
+    //     const a = [1, 5, 4, 1];
+    //     let k = a.length;
+    //     let array2 = [];
+    //     function sortMin() {
+    //         for (let i = 0; i < a.length; i++) {
+    //             let b = a.every((x) => {
+    //                 if (x === a[i]) {
+    //                     return true;
+    //                 } else {
+    //                     return x > a[i];
+    //                 }
+    //             });
+    //             if (a.length === 2) {
+    //                 if (a[0] > a[1]) {
+    //                     array2.push(a[1]);
+    //                     array2.push(a[0]);
+    //                 }
+    //             }
+    //             console.log(a, array2, k);
+    //             if (b) {
+    //                 if (k !== 0 && a.length !== 2) {
+    //                     array2.push(a.splice(i, 1)[0]);
+    //                     i = 0;
+    //                     k--;
+    //                 }
+    //             }
+    //         }
+    //         return array2;
+    //     }
+    //     console.log(sortMin());
+    // }, []);
     //formik default Value
     const defaultValue = {
         user_name: "",
@@ -65,19 +65,19 @@ export const Contact = ({ reff }) => {
     });
 
     //email service
-    const sendEmail = (e) => {
-        e.preventDefault();
-
-        emailjs
-            .sendForm("service_8dp9q3n", "template_7oytriu", form.current, "user_6cHVmokPuCbm0SdamIhdA")
-            .then(
-                (result) => {
-                    alert(result.text);
-                },
-                (error) => {
-                    alert(error.text);
-                }
-            );
+    const sendEmail = (value) => {
+        
+        console.log(value)
+        // emailjs
+        //     .sendForm("service_8dp9q3n", "template_7oytriu", form.current, "user_6cHVmokPuCbm0SdamIhdA")
+        //     .then(
+        //         (result) => {
+        //             alert(result.text);
+        //         },
+        //         (error) => {
+        //             alert(error.text);
+        //         }
+        //     );
     };
     return (
         <Grid container>
@@ -122,19 +122,19 @@ export const Contact = ({ reff }) => {
                             <Grid item xs={12} sm={6}>
                                 <div style={{ padding: "32px" }}>
                                     <h1 className="Cheading mtCC">Contact Us</h1>
-                                    <Formik initialValues={defaultValue} validationSchema={validationSchema}>
+                                    <Formik onSubmit={sendEmail} initialValues={defaultValue} validationSchema={validationSchema}>
                                         <Form
                                             autoComplete="off"
                                             className="form"
                                             ref={form}
-                                            onSubmit={sendEmail}
+                                            
                                         >
                                             <TextfieldWrapper
                                                 autoComplete="off"
                                                 className="mtCC "
                                                 label="Name"
                                                 name="user_name"
-                                                setdetectError={setdetectError1}
+                                                setdetecterror={setdetectError1}
                                                 
                                             />
                                             <TextfieldWrapper
@@ -142,7 +142,7 @@ export const Contact = ({ reff }) => {
                                                 className="mtCC "
                                                 label="Email"
                                                 name="user_email"
-                                                setdetectError={setdetectError2}
+                                                setdetecterror={setdetectError2}
                                             />
                                             <TextfieldWrapper
                                                 className="mtCC"
@@ -151,7 +151,7 @@ export const Contact = ({ reff }) => {
                                                 name="message"
                                                 label="Message"
                                                 autoComplete="off"
-                                                setdetectError={setdetectError3}
+                                                setdetecterror={setdetectError3}
                                             />
                                             <ButtonWrapper
                                                 color="primary"

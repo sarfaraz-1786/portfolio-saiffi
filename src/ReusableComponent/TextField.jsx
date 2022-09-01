@@ -17,14 +17,14 @@ const TextfieldWrapper = memo(({ name, ...otherProps }) => {
         configTextfield.error = true;
         configTextfield.helperText = mata.error;
         if ((configTextfield.error = true && name)) {
-            configTextfield.setdetectError(true);
+            configTextfield.setdetecterror(true);
         }  
     }
 
     useEffect(() => {
         if (mata.value && mata.error === undefined) {
             if (name) {
-                configTextfield.setdetectError(false);
+                configTextfield.setdetecterror(false);
             } 
         }
     }, [mata.value, mata.error, name, configTextfield]);
